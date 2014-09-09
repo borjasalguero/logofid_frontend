@@ -57,11 +57,11 @@
         tmpData,
         function(e, partialItemTmp) {
           if (e) {
-            callback(new Error('It was impossible to create the item'));
+            callback(new Error('It was impossible to create the item ' + e));
             return;
           }
           var partialItem = JSON.parse(partialItemTmp);
-
+          
           // Update video file
 
           var s3upload = new S3Upload({
@@ -77,7 +77,6 @@
               // TODO Enviar AUDIO y VIDEO
               // partialItem.audioURL = 'este es el audio URL';
               partialItem.photoURL = public_url;
-              console.log('VAMOS MAMONA ' + JSON.stringify(partialItem));
               Server.request(
                 'item',
                 'update',
@@ -96,12 +95,6 @@
               console.log('Upload error: ' + status);
             }
           });
-
-
-          
-
-
-          
         }
       );
     },

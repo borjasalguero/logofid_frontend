@@ -6,8 +6,8 @@
    * This class will be in charge of the connections with the server.
    */
   
-  var SERVER_URL = 'http://localhost:5000/api/v1/';
-  // var SERVER_URL = 'http://morning-plains-7310.herokuapp.com/api/v1/';
+  // var SERVER_URL = 'http://localhost:5000/api/v1/';
+  var SERVER_URL = 'http://morning-plains-7310.herokuapp.com/api/v1/';
 
   
 
