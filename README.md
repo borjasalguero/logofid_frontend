@@ -1,2 +1,1 @@
-logofid_frontend
-================
+Logofid frontend

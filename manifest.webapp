@@ -1,0 +1,41 @@
+{
+  "name": "Push App",
+  "description": "Logofid App",
+  "launch_path": "/index.html",
+  "orientation": "portrait",
+  "type": "privileged",
+  "developer": {
+    "name": "Borja Salguero",
+    "url": "https://github.com/borjasalguero/logofid_frontend"
+  },
+  "locales": {
+    "es": {
+      "name": "Logofid 2.0",
+      "description": "Logofid: ahora implementado... ¡En tecnologías web!"
+    },
+    "en-US": {
+      "name": "Logofid 2.0",
+      "description": "Logofid: now with web technologies!"
+    }
+  },
+  "permissions": {
+    "desktop-notification": {
+      "description": "Used to present notifications"
+    },
+    "push": {
+      "description": "Used to receive push notifications"
+    },
+    "systemXHR": {
+      "description": "Used to fetch data from server side"
+    }
+  },
+  "messages": [
+    { "notification": "/index.html" },
+    { "push": "/index.html"}
+  ],
+  "default_locale": "en-US",
+  "icons": {
+    "128": "/icons/128.png",
+    "60": "/icons/60.png"
+  }
+}
