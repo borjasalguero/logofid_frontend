@@ -50,9 +50,6 @@
       };
 
 
-      console.log('ESTOY LISTO!');
-
-
       Server.request(
         'item',
         'create',
@@ -67,24 +64,41 @@
 
           // Update video file
 
-
-          // TODO Enviar AUDIO y VIDEO
-          // partialItem.audioURL = 'este es el audio URL';
-          partialItem.photoURL = 'este es la IMAGEN URL';
-          console.log('VAMOS MAMONA ' + JSON.stringify(partialItem));
-          Server.request(
-            'item',
-            'update',
-            'POST',
-            partialItem,
-            function(e, finalItem) {
-              if (e) {
-                callback(new Error('It was impossible to create the item'));
-                return;
-              }
-              callback(null, JSON.parse(finalItem));
+          var s3upload = new S3Upload({
+            s3_object_name: partialItem._id,
+            file_dom_selector: itemData.photo.domIdentifier,
+            s3_sign_put_url: 'http://morning-plains-7310.herokuapp.com/sign_s3',
+            // s3_sign_put_url: 'http://localhost:5000/sign_s3',
+            onProgress: function(percent, message) {
+              console.log('Upload progress: ' + percent + '% ' + message);
+            },
+            onFinishS3Put: function(public_url) {
+              console.log('Upload completed. Uploaded to: '+ public_url);
+              // TODO Enviar AUDIO y VIDEO
+              // partialItem.audioURL = 'este es el audio URL';
+              partialItem.photoURL = public_url;
+              console.log('VAMOS MAMONA ' + JSON.stringify(partialItem));
+              Server.request(
+                'item',
+                'update',
+                'POST',
+                partialItem,
+                function(e, finalItem) {
+                  if (e) {
+                    callback(new Error('It was impossible to create the item'));
+                    return;
+                  }
+                  callback(null, JSON.parse(finalItem));
+                }
+              );
+            },
+            onError: function(status) {
+              console.log('Upload error: ' + status);
             }
-          );
+          });
+
+
+          
 
 
           
