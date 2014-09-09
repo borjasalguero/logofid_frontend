@@ -10,7 +10,7 @@ var initialized = false;
 // var channelText;
 
 
-var itemName, itemButton, itemPhoto;
+var itemName, itemButton, itemPhoto, itemAudio;
 
 window.addEventListener('localized', function localized() {
   debug && console.log('We have l10n working!');
@@ -22,6 +22,7 @@ window.addEventListener('localized', function localized() {
   itemName = document.getElementById('item-name');
   itemButton = document.getElementById('create-item-button');
   itemPhoto = document.getElementById('item-photo');
+  itemAudio = document.getElementById('item-audio');
 
   itemButton.addEventListener(
     'click',
@@ -39,6 +40,7 @@ window.addEventListener('localized', function localized() {
       console.log('Nombre ' + itemName.value);
 
       console.log('FILE ' + JSON.stringify(itemPhoto.files[0]));
+      console.log('FILE ' + itemPhoto.value);
 
 
       var user = {
@@ -46,8 +48,11 @@ window.addEventListener('localized', function localized() {
       };
 
       var itemData = {
-        name: 'Batata',
-        // audio: 'yyy',
+        name: itemName.value,
+        audio: {
+          fileName: itemAudio.files[0].name,
+          domIdentifier: itemAudio.id
+        },
         photo: {
           fileName: itemPhoto.files[0].name,
           domIdentifier: itemPhoto.id
