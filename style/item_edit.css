@@ -56,7 +56,7 @@
   /*background-blend-mode: luminosity;*/
 }
 
-#ie-photo:after {
+#ie-photo.edit:after {
   content: '';
   /*background: rgba(255,255,255,.3);*/
   background-image: url(images/plus.png);
@@ -91,7 +91,7 @@
   width: 100%;
   height: 23rem;
   position: absolute;
-  background: rgba(255,255,255,.3);
+  background: rgba(255,255,255,0.6);
   
   bottom: 0;
 }
@@ -158,7 +158,7 @@
 }
 
 
-#ie-shareable {
+#ie-shareable-button {
   bottom: 8rem;
   left: calc(50% - 7rem);
   background-image: url(images/share.png);
@@ -166,13 +166,34 @@
   background-position: center;
 }
 
-#ie-audio {
+#ie-shareable-button:active {
+  background: #00AACC; 
+  background-image: url(images/share_enabled.png);
+  background-size: 100%;
+  background-position: center;
+}
+
+#ie-audio-button {
   bottom: 8rem;
   right: calc(50% - 7rem);
   background-image: url(images/record.png);
   background-size: 100%;
   background-position: center;
+}
 
+#ie-audio-button.enabled {
+  bottom: 8rem;
+  right: calc(50% - 7rem);
+  background-image: url(images/record_verified.png);
+  background-size: 100%;
+  background-position: center;
+}
+
+#ie-audio-button:active {
+  background: #00AACC; 
+  background-image: url(images/record_enabled.png);
+  background-size: 100%;
+  background-position: center;
 }
 
 body[data-keyboard-shown="true"] #ie-photo {

@@ -22,6 +22,8 @@
     <script defer src="js/views/item_edit.js"></script>
 
     <script defer src="js/models/item.js"></script>
+    
+    <script defer src="js/helpers/aws_storage.js"></script>
     <script defer src="js/helpers/server.js"></script>
     <script defer src="js/helpers/l10n.js"></script>
     <!--<script defer src="js/app.js"></script>-->
@@ -34,7 +36,7 @@
     </style>
   </head>
 
-  <body data-layout="item-edit" data-keyboard-shown="false">
+  <body data-layout="" data-keyboard-shown="false">
     <!-- As filter: blur() is not implemented, we need to use svg instead -->
     
     <div id="background" class="panel">
@@ -59,18 +61,21 @@
         </defs>
       </svg> -->
       <!-- <img id="ie-photo" src="style/images/example.jpg"> -->
-      <div id="ie-photo"></div>
+      <div id="ie-photo" class="edit"></div>
       <form id="ie-form" class="ie-glass-form">
+        <input type="file" id="ie-audio-file" accept="audio/*" hidden>
+        <input type="file" id="ie-photo-file" accept="image/*" hidden>
+
         <input id="ie-name" type="text" placeholder="Introduce nombre">
-        <button id="ie-shareable" class="ie-button">
+        <button id="ie-shareable-button" class="ie-button">
         </button>
-        <button id="ie-audio" class="ie-button">
+        <button id="ie-audio-button" class="ie-button">
         </button>
         <section class="options options-half">
-          <button class="option-button option-button-negative">
+          <button id="ie-cancel-button" class="option-button option-button-negative">
             Cancelar
           </button>
-          <button class="option-button option-button-positive">
+          <button id="ie-create-button" class="option-button option-button-positive">
             Crear
           </button>
         </section>

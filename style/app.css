@@ -27,7 +27,7 @@ button::-moz-focus-inner {
   width: 100%;
   height: 100%;
   background: red;
-  transition: transform 1s ease;
+  /*transition: transform 1s ease;*/
 }
 
 #background {
@@ -59,7 +59,15 @@ body[data-layout="item-edit"] #item-edit {
   transform: translateY(0);
 }
 
+.bck-horizontal {
+  background-size: auto 100% !important;
+  background-repeat: no-repeat !important;
+}
 
+.bck-vertical {
+  background-size: 100% auto !important;
+  background-repeat: no-repeat !important;
+}
 /*
 a:link,
 a:visited,
