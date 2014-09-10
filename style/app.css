@@ -3,21 +3,64 @@ html, body {
   width: 100%;
   padding: 0;
   margin: 0;
-  font-size: 10px;
+  font-size: 15px;
   overflow-x: hidden !important;
-  overflow-y: scroll;
+  overflow-y: hidden !important;
   font-family: 'MozTT', sans-serif;
   background: #FF4E00;
 }
 
+* {
+  -moz-user-select: none !important;
+  user-select: none !important;
+}
+
+button::-moz-focus-inner {
+  outline: none;
+  border: none;
+}
+
 .panel {
-  padding: 3rem 2rem 2rem 2rem;
+  /*padding: 3rem 2rem 2rem 2rem;*/
   -moz-box-sizing: border-box;
   position: absolute;
   width: 100%;
   height: 100%;
+  background: red;
+  transition: transform 1s ease;
 }
 
+#background {
+  z-index: 0;
+}
+
+#user-edit,
+#user-detail {
+  border-top: .1rem solid white;
+  background: green;
+  z-index: 5;
+}
+
+#item-edit,
+#item-detail {
+  background: white;
+  z-index: 10;
+}
+
+
+#user-edit,
+#user-detail,
+#item-edit,
+#item-detail {
+  transform: translateY(100%);
+}
+
+body[data-layout="item-edit"] #item-edit {
+  transform: translateY(0);
+}
+
+
+/*
 a:link,
 a:visited,
 a:active {
@@ -94,4 +137,4 @@ input {
   height: 3rem;
   width: 100%;
   margin-bottom: 1rem;
-}
+}*/

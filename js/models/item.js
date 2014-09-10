@@ -13,23 +13,7 @@
       },
       onFinishS3Put: function(public_url) {
         console.log('Upload completed. Uploaded to: '+ public_url);
-        callback(public_url)
-        // // TODO Enviar AUDIO y VIDEO
-        // // partialItem.audioURL = 'este es el audio URL';
-        // partialItem.photoURL = public_url;
-        // Server.request(
-        //   'item',
-        //   'update',
-        //   'POST',
-        //   partialItem,
-        //   function(e, finalItem) {
-        //     if (e) {
-        //       callback(new Error('It was impossible to create the item'));
-        //       return;
-        //     }
-        //     callback(null, JSON.parse(finalItem));
-        //   }
-        // );
+        callback(public_url);
       },
       onError: function(status) {
         console.log('Upload error: ' + status);

@@ -1,0 +1,181 @@
+#item-edit {
+ /*background: pink;*/
+}
+
+#item-edit input[type="text"] {
+  color: #00AACC;
+  font-weight: 200;
+  background: transparent;
+  border: none;
+  width: 100%;
+  height: 8rem;
+  /*line-height: 5rem;*/
+  font-size: 5rem;
+  text-align: center;
+  padding: 1rem;
+  box-sizing: border-box;
+}
+
+#item-edit input[type="text"]::-moz-placeholder{
+  color: #4D4D4D;
+  font-size: 3rem;
+}
+
+
+
+
+#ie-photo-background {
+  background-image: url(images/limones.jpg);
+  background-size: auto 100%;
+  background-position: center; 
+  width: 100%;
+  height: 100%;
+  position: absolute;
+
+  background-image: url(images/limones.jpg);
+  background-color: black;
+  background-blend-mode: luminosity;
+  opacity: 0.6;
+}
+
+#ie-photo {
+  box-sizing: border-box;
+  border: 1rem solid white;
+  /*background: red;*/
+  width: 25rem;
+  height: 25rem;
+  border-radius: 12.5rem;
+  top: 3.5rem;
+  left: calc(50% - 12.5rem);
+  position: absolute;
+  padding: 0;
+  margin: 0;
+  background-image: url(images/limones.jpg);
+  background-size: auto 100%;
+  background-position: center; 
+  /*background-blend-mode: luminosity;*/
+}
+
+#ie-photo:after {
+  content: '';
+  /*background: rgba(255,255,255,.3);*/
+  background-image: url(images/plus.png);
+  background-repeat: no-repeat;
+  background-size: 10rem;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+
+#ie-photo:active {
+  
+}
+
+#ie-photo:active:after{
+  background: rgba(255,255,255,.4);
+  background-size: 10rem;
+
+  background-image: url(images/plus.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.ie-glass-form {
+  /*border-image: url(images/share.png) 30 30 round;*/
+  /*border-top: .2rem solid #ccc;*/
+  width: 100%;
+  height: 23rem;
+  position: absolute;
+  background: rgba(255,255,255,.3);
+  
+  bottom: 0;
+}
+
+.ie-glass-form:before {
+  content: '';
+  /*background: red;*/
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  top: -20px;
+  left: 0;
+  background-image: url(images/topgradient.png);
+}
+
+
+
+.options {
+  height: 4rem;
+  width: 100%;
+  position: absolute;
+  bottom: 1rem;
+}
+
+.option-button {
+  height: 4rem;
+  position: relative;
+  float: left;
+  border-radius: 2rem;
+  border: none;
+  font-size: 1.6rem;
+  color: white;
+}
+
+.option-button-negative {
+  background: #B90000;
+}
+.option-button-negative:active {
+  background: #820000;
+}
+
+.option-button-positive {
+  background: #00AACC;
+}
+
+.option-button-positive:active {
+  background: #00CAF2;
+}
+
+.options-half .option-button {
+  width: calc(50% - 1rem);
+  box-sizing: border-box;
+  margin: 0 .5rem;
+}
+
+.ie-button {
+  background: white;
+  box-sizing: border-box;
+  border: .3rem solid #00AACC;
+  width: 6rem;
+  height: 6rem;
+  border-radius: 3rem;
+  position: absolute;
+}
+
+
+#ie-shareable {
+  bottom: 8rem;
+  left: calc(50% - 7rem);
+  background-image: url(images/share.png);
+  background-size: 100%;
+  background-position: center;
+}
+
+#ie-audio {
+  bottom: 8rem;
+  right: calc(50% - 7rem);
+  background-image: url(images/record.png);
+  background-size: 100%;
+  background-position: center;
+
+}
+
+body[data-keyboard-shown="true"] #ie-photo {
+  display: none;
+
+}
